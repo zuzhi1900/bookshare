@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+.page-header {
+	border-bottom: 1px solid #ccc;
+}
+
+
+
+/* Gradient transparent - color - transparent */
+hr.styled {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #ccc, #999, #ccc); 
+    background-image:    -moz-linear-gradient(left, #ccc, #999, #ccc); 
+    background-image:     -ms-linear-gradient(left, #ccc, #999, #ccc); 
+    background-image:      -o-linear-gradient(left, #ccc, #999, #ccc); 
+}
+
+body {
+	background-color: #eee;
+}

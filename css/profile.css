@@ -1,0 +1,19 @@
+#profile_picture{
+
+	width: 240px;
+
+	padding: 0 30px 0 0;
+
+	float: left;
+
+	border-right: 1px solid #ddd;
+
+}
+
+
+
+#profile_picture img{
+
+	width: 240px;
+
+}
