@@ -53,6 +53,9 @@ header("Content-Type:text/html; charset=utf-8");
           <!--
           <p><?php echo $_SERVER['PHP_SELF']; print_r($_SERVER); ?></p>
           -->
+          <?php
+          
+          ?>
         </div>
       </div>
 
@@ -61,10 +64,7 @@ header("Content-Type:text/html; charset=utf-8");
     </div> <!-- /container -->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <!-- External JS -->
+    <?php include 'includes/external-js.php' ?>
   </body>
 </html>

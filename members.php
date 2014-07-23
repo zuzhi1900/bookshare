@@ -15,7 +15,7 @@ $member_count   = count($members);
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title><?php include 'includes/title.php' ?></title>
+    <title>用户列表 | bookshare</title>
 
     <!-- External CSS -->
     <?php include 'includes/external-css.php' ?>
@@ -62,10 +62,7 @@ $member_count   = count($members);
     </div> <!-- /container -->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-1.11.1.min.js"></script>     
-    <script src="js/bootstrap.min.js"></script>
+    <!-- External JS -->
+    <?php include 'includes/external-js.php' ?>
   </body>
 </html>

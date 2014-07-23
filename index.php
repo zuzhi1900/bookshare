@@ -55,11 +55,8 @@ $general->logged_in_protect();
     </div> <!-- /container -->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/holder.js"></script>
+    <!-- External JS -->
+    <?php include 'includes/external-js.php' ?>
+    <script src="http://cdn.bootcss.com/holder/2.3.1/holder.min.js"></script>
   </body>
 </html>

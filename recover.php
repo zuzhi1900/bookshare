@@ -94,10 +94,7 @@ $general->logged_in_protect();
     </div> <!-- /container -->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-1.11.1.min.js"></script>     
-    <script src="js/bootstrap.min.js"></script>
+    <!-- External JS -->
+    <?php include 'includes/external-js.php' ?>
   </body>
 </html>

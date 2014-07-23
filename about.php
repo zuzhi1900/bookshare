@@ -14,7 +14,7 @@ $general->logged_out_protect();
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title><?php include 'includes/title.php' ?></title>
+    <title>公告 | bookshare</title>
 
     <!-- External CSS -->
     <?php include 'includes/external-css.php' ?>
@@ -70,10 +70,7 @@ $general->logged_out_protect();
     </div> <!-- /container -->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-1.11.1.min.js"></script>     
-    <script src="js/bootstrap.min.js"></script>
+    <!-- External JS -->
+    <?php include 'includes/external-js.php' ?>
   </body>
 </html>
