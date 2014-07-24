@@ -5,8 +5,8 @@ class Users{
 
 	public function __construct($database) {
 	    $this->db = $database;
-	}	
-	
+	}
+
 	public function update_user($first_name, $last_name, $gender, $bio, $image_location, $id){
 
 		$query = $this->db->prepare("UPDATE `users` SET
@@ -16,7 +16,7 @@ class Users{
 								`bio`			= ?,
 								`image_location`= ?
 								
-								WHERE `id` 		= ? 
+								WHERE `id` 		= ?
 								");
 
 		$query->bindValue(1, $first_name);
@@ -25,12 +25,12 @@ class Users{
 		$query->bindValue(4, $bio);
 		$query->bindValue(5, $image_location);
 		$query->bindValue(6, $id);
-		
+
 		try{
 			$query->execute();
 		}catch(PDOException $e){
 			die($e->getMessage());
-		}	
+		}
 	}
 
 	public function change_password($user_id, $password) {
@@ -43,7 +43,7 @@ class Users{
 		$query = $this->db->prepare("UPDATE `users` SET `password` = ? WHERE `id` = ?");
 
 		$query->bindValue(1, $password_hash);
-		$query->bindValue(2, $user_id);				
+		$query->bindValue(2, $user_id);
 
 		try{
 			$query->execute();

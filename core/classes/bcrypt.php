@@ -13,7 +13,6 @@ class Bcrypt {
 	private function genSalt() {
 
 		/* GenSalt */
-
 		$string = str_shuffle(mt_rand());
 		$salt 	= uniqid($string ,true);
 
