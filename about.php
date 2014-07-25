@@ -32,7 +32,7 @@ $general->logged_out_protect();
 
   <body>
     <!-- navbar -->
-    <?php include 'includes/navbar-default.php' ?>
+    <?php include 'includes/navbar.php' ?>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="page-header">
@@ -68,7 +68,6 @@ $general->logged_out_protect();
       <!-- footer -->
       <?php include 'includes/footer.php' ?>
     </div> <!-- /container -->
-
 
     <!-- External JS -->
     <?php include 'includes/external-js.php' ?>

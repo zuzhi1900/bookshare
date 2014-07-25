@@ -41,7 +41,7 @@ if(isset($_GET['username']) && empty($_GET['username']) === false) { // Putting 
 
   <body>
     <!-- navbar -->
-    <?php include 'includes/navbar-default.php' ?>
+    <?php include 'includes/navbar.php' ?>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="page-header">
@@ -94,7 +94,6 @@ if(isset($_GET['username']) && empty($_GET['username']) === false) { // Putting 
       <!-- footer -->
       <?php include 'includes/footer.php' ?>
     </div>
-
 
     <!-- External JS -->
     <?php include 'includes/external-js.php' ?>

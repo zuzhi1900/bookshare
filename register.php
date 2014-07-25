@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
 
   <body>
     <!-- navbar -->
-    <?php include 'includes/navbar-default.php' ?>
+    <?php include 'includes/navbar.php' ?>
 
     <!-- page-header -->
     <div class="page-header">
@@ -137,7 +137,6 @@ if (isset($_POST['submit'])) {
       <!-- footer -->
       <?php include 'includes/footer.php' ?>
     </div> <!-- /container -->
-
 
     <!-- External JS -->
     <?php include 'includes/external-js.php' ?>

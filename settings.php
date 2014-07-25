@@ -31,7 +31,7 @@ $general->logged_out_protect();
 
   <body>
     <!-- navbar -->
-    <?php include 'includes/navbar-default.php' ?>
+    <?php include 'includes/navbar.php' ?>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="page-header">
@@ -79,7 +79,7 @@ $general->logged_out_protect();
           $a        = explode('.', $name);
           $file_ext     = strtolower(end($a)); unset($a);
           $file_size    = $_FILES['myfile']['size'];    
-          $path       = "avatars";
+          $path       = "assets/avatars";
           
           if (in_array($file_ext, $allowed_ext) === false) {
             $errors[] = 'Image file type not allowed';  
@@ -184,7 +184,6 @@ $general->logged_out_protect();
 
     <!-- footer -->
     <?php include 'includes/footer.php' ?>
-
 
     <!-- External JS -->
     <?php include 'includes/external-js.php' ?>
