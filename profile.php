@@ -52,14 +52,15 @@ if(isset($_GET['username']) && empty($_GET['username']) === false) { // Putting 
 
     <div class="container">
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-3">
+          <h3>个人头像</h3>
           <?php 
             $image = $profile_data['image_location'];
             echo "<img class='img-thumbnail img-circle img-responsive' src='$image'>";
           ?>
         </div>
-        <div class="col-md-10">
-
+        <div class="col-md-offset-1 col-md-4">
+        <h3 >个人资料</h3>
           <?php if(!empty($profile_data['first_name']) || !empty($profile_data['last_name'])){?>
 
             <span><strong>姓名</strong>：</span>

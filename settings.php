@@ -45,9 +45,9 @@ $general->logged_out_protect();
 <?php
       if (isset($_GET['success']) && empty($_GET['success'])) {
           echo '<h3>你的资料已更新！</h3>';         
-      } else{
+      } else {
 
-            if(empty($_POST) === false) {   
+            if(empty($_POST) === false) {
         
         // Make First name and Last name are only letters.
         // if (isset($_POST['first_name']) && !empty ($_POST['first_name'])){
@@ -73,13 +73,13 @@ $general->logged_out_protect();
 
         if (isset($_FILES['myfile']) && !empty($_FILES['myfile']['name'])) {
           
-          $name       = $_FILES['myfile']['name'];
+          $name         = $_FILES['myfile']['name'];
           $tmp_name     = $_FILES['myfile']['tmp_name'];
           $allowed_ext  = array('jpg', 'jpeg', 'png', 'gif' );
-          $a        = explode('.', $name);
+          $a            = explode('.', $name);
           $file_ext     = strtolower(end($a)); unset($a);
           $file_size    = $_FILES['myfile']['size'];    
-          $path       = "assets/avatars";
+          $path         = "assets/avatars";
           
           if (in_array($file_ext, $allowed_ext) === false) {
             $errors[] = 'Image file type not allowed';  
@@ -107,8 +107,8 @@ $general->logged_out_protect();
               
           $first_name   = htmlentities(trim($_POST['first_name']));
           $last_name    = htmlentities(trim($_POST['last_name']));  
-          $gender     = htmlentities(trim($_POST['gender']));
-          $bio      = htmlentities(trim($_POST['bio']));
+          $gender       = htmlentities(trim($_POST['gender']));
+          $bio          = htmlentities(trim($_POST['bio']));
           $image_location = htmlentities(trim($newpath));
           
           $users->update_user($first_name, $last_name, $gender, $bio, $image_location, $user_id);
@@ -123,7 +123,7 @@ $general->logged_out_protect();
       <p><b>注意：你在这儿填写的信息对他人可见。</b></p>
       <hr class="styled">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <form role="form" action="" method="post" enctype="multipart/form-data">
             <h3>更换个人头像</h3>
             <div class="form-group">
@@ -144,7 +144,7 @@ $general->logged_out_protect();
             <?php } ?>
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-offset-1 col-md-4">
           <div class="form-group">
               <h3 >更改个人资料</h3>
               <label for="inputLastName">姓：</label>

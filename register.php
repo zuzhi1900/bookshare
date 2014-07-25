@@ -5,12 +5,10 @@ $general->logged_in_protect();
 
 # If form is submitted
 if (isset($_POST['submit'])) {
-
   if(empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email'])){
-
+    
     $errors[] = 'All fields are required.';
-
-  }else{
+  } else {
         
         # Validating user's input with functions that we will create next
         if ($users->user_exists($_POST['username']) === true) {
