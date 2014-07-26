@@ -5,12 +5,10 @@ $general->logged_in_protect();
 
 # If form is submitted
 if (isset($_POST['submit'])) {
-
   if(empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email'])){
-
+    
     $errors[] = 'All fields are required.';
-
-  }else{
+  } else {
         
         # Validating user's input with functions that we will create next
         if ($users->user_exists($_POST['username']) === true) {
@@ -70,7 +68,7 @@ if (isset($_POST['submit'])) {
 
   <body>
     <!-- navbar -->
-    <?php include 'includes/navbar-default.php' ?>
+    <?php include 'includes/navbar.php' ?>
 
     <!-- page-header -->
     <div class="page-header">
@@ -137,7 +135,6 @@ if (isset($_POST['submit'])) {
       <!-- footer -->
       <?php include 'includes/footer.php' ?>
     </div> <!-- /container -->
-
 
     <!-- External JS -->
     <?php include 'includes/external-js.php' ?>

@@ -3,12 +3,14 @@
 session_start();
 require 'connect/database.php';
 require 'classes/users.php';
+require 'classes/books.php';
 require 'classes/general.php';
 require 'classes/bcrypt.php'; // Including bcrypt.php
 
 // error_reporting(0);
 
 $users 		= new Users($db);
+$books      = new Books($db);
 $general 	= new General();
 $bcrypt 	= new Bcrypt(12); // Instantiating the Bcrypt class
 

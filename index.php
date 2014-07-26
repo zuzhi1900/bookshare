@@ -31,7 +31,7 @@ $general->logged_in_protect();
 
   <body>
     <!-- navbar -->
-    <?php include 'includes/navbar-default.php' ?>
+    <?php include 'includes/navbar.php' ?>
 
     <!-- page-header -->
     <div class="page-header">
@@ -46,14 +46,13 @@ $general->logged_in_protect();
         <div class="col-md-4">
           
           <p>欢迎来到BookShare.</p>
-          <img class="img-circle" src="img/smile_when_youre_winning_print@140x140.jpg">
+          <img class="img-circle" src="assets/img/smile_when_youre_winning_print@140x140.jpg">
         </div>
       </div>
 
       <!-- footer -->
       <?php include 'includes/footer.php' ?>
     </div> <!-- /container -->
-
 
     <!-- External JS -->
     <?php include 'includes/external-js.php' ?>

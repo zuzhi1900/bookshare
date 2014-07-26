@@ -15,11 +15,8 @@ $general->logged_in_protect();
 
     <title>恢复 | bookshare</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/jumbotron.css" rel="stylesheet">
+    <!-- External CSS -->
+    <?php include 'includes/external-css.php' ?>
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -92,7 +89,6 @@ $general->logged_in_protect();
       <!-- footer -->
       <?php include 'includes/footer.php' ?>
     </div> <!-- /container -->
-
 
     <!-- External JS -->
     <?php include 'includes/external-js.php' ?>

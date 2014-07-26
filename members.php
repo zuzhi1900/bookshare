@@ -32,7 +32,7 @@ $member_count   = count($members);
 
   <body>
     <!-- navbar -->
-    <?php include 'includes/navbar-default.php' ?>
+    <?php include 'includes/navbar.php' ?>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="page-header">
@@ -60,7 +60,6 @@ $member_count   = count($members);
       <!-- footer -->
       <?php include 'includes/footer.php' ?>
     </div> <!-- /container -->
-
 
     <!-- External JS -->
     <?php include 'includes/external-js.php' ?>
