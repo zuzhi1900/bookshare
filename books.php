@@ -90,20 +90,24 @@ $general->logged_out_protect();
           </form>
         </div>
       </div>
+      <h2>你的图书</h2>
+      
+      <?php
+      $booksdata = $books->get_books();
+      foreach ($booksdata as $bookdata) {?>
       <div class="row">
-        <div class="col-md-4">
-          <h2>你的图书</h2>
-          <p>书名：</p>
-          <p>作者：</p>
-          <p>isbn：</p>
-          <?php
-          $bookdata = $books->bookdata();
-          foreach ($bookdata as $key => $value) {
-            echo $key."->".$value."<br>";
-          };
-          ?>
+        <div class="col-md-offset-4 col-md-4">
+      <?php
+          echo '<p>书名：'.$bookdata['bookname']."</p>";
+          echo '<p>作者：'.$bookdata['author']."</p>";
+          echo '<p>isbn：'.$bookdata['isbn']."</p>";
+      ?>
         </div>
       </div>
+      <?php
+      };
+      ?>
+      
 
       <!-- footer -->
       <?php include 'includes/footer.php' ?>
