@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 # Including our init.php
 require 'core/init.php';
 $general->logged_out_protect();
@@ -28,36 +28,36 @@ $general->logged_out_protect();
     <div class="container">
 
 <?php
-      if (isset($_GET['success']) && empty($_GET['success'])) {
-          echo '<h3>已添加！</h3>';
-      } else{
-        if(empty($_POST) === false) {
-          if(empty($_POST['bookname']) || empty($_POST['author']) || empty($_POST['isbn'])){
+    if (isset($_GET['success']) && empty($_GET['success'])) {
+        echo '<h3>已添加！</h3>';
+    } else{
+      if(empty($_POST) === false) {
+        if(empty($_POST['bookname']) || empty($_POST['author']) || empty($_POST['isbn'])){
 
-            $errors[] = 'All fields are required.';
-          } else {
+          $errors[] = 'All fields are required.';
+        } else {
 
-            if (isset($_POST['bookname']) && !empty($_POST['bookname'])) {
-              # code...
-            }
-            if (isset($_POST['author']) && !empty($_POST['author'])) {
-              # code...
-            }
-            if (isset($_POST['isbn']) && !empty($_POST['isbn'])) {
-              # code...
-            }
+          if (isset($_POST['bookname']) && !empty($_POST['bookname'])) {
+            # code...
           }
-          if(empty($errors) === true) {
-            $bookname   = htmlentities($_POST['bookname']);
-            $author   = htmlentities($_POST['author']);
-            $isbn    = htmlentities($_POST['isbn']);
-
-            $books->add_book($bookname, $author, $isbn); // Calling the add_book function, which we will create soon.
-            header('Location: books.php?success');
-            exit();
+          if (isset($_POST['author']) && !empty($_POST['author'])) {
+            # code...
+          }
+          if (isset($_POST['isbn']) && !empty($_POST['isbn'])) {
+            # code...
           }
         }
+        if(empty($errors) === true) {
+          $bookname   = htmlentities($_POST['bookname']);
+          $author   = htmlentities($_POST['author']);
+          $isbn    = htmlentities($_POST['isbn']);
+
+          $books->add_book($bookname, $author, $isbn); // Calling the add_book function, which we will create soon.
+          header('Location: books.php?success');
+          exit();
+        }
       }
+    }
 ?>
       <!-- Example row of columns -->
       <div class="row">
@@ -96,6 +96,12 @@ $general->logged_out_protect();
           <p>书名：</p>
           <p>作者：</p>
           <p>isbn：</p>
+          <?php
+          $bookdata = $books->bookdata();
+          foreach ($bookdata as $key => $value) {
+            echo $key."->".$value."<br>";
+          };
+          ?>
         </div>
       </div>
 

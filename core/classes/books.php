@@ -8,6 +8,7 @@ class Books
 	}
 
 	public function add_book($bookname, $author, $isbn) {
+
 		$query 	= $this->db->prepare("INSERT INTO `books` (`bookname`, `author`, `isbn`) VALUES (?, ?, ?) ");
 
 		$query->bindValue(1, $bookname);
@@ -17,6 +18,17 @@ class Books
 		try{
 			$query->execute();
 		}catch(PDOException $e){
+			die($e->getMessage());
+		}
+	}
+
+	public function bookdata() {
+
+		$query = $this->db->prepare("SELECT * FROM `books`");
+		try{
+			$query->execute();
+			return $query->fetch();
+		} catch(PDOException $e){
 			die($e->getMessage());
 		}
 	}
