@@ -219,7 +219,7 @@ class Users{
 			mail($email, '请激活你的账户', "Hello " . $username. ",\r\n感谢你注册monstermars的账户。请访问下面的链接激活你的账户：\r\n\r\nhttp://monstermars.com/activate.php?email=" . $email . "&email_code=" . $email_code . "\r\n\r\n-- MonsterMars zuzhi");
 		}catch(PDOException $e){
 			die($e->getMessage());
-		}	
+		}
 	}
 
 	public function activate($email, $email_code) {

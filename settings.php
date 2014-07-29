@@ -102,7 +102,7 @@ $general->logged_out_protect();
             move_uploaded_file($tmp_name, $newpath);
 
           }else if(isset($_POST['use_default']) && $_POST['use_default'] === 'on'){
-                        $newpath = 'avatars/default_avatar.png';
+                        $newpath = 'assets/avatars/default_avatar.png';
                     }
               
           $first_name   = htmlentities(trim($_POST['first_name']));
@@ -136,7 +136,7 @@ $general->logged_out_protect();
             <div class="form-group">
               <input type="file" name="myfile" class="form-control"/>
             </div>
-            <?php if($image != 'avatars/default_avatar.png'){ ?>
+            <?php if($image != 'assets/avatars/default_avatar.png'){ ?>
             <div class="form-group">
               <input type="checkbox" name="use_default" id="use_default" />
               <label for="use_default">使用默认头像</label>
