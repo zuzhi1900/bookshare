@@ -86,9 +86,8 @@ if (isset($_POST['submit'])) {
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
         <p>
       <?php
-        echo "Thank you for registering. Please check your email to activate your account";
+        echo 'Thank you for registering. Please check your email to activate your account.'."</p>";
       ?>
-        </p>
       </div>
       <?php
       }

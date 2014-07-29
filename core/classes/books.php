@@ -22,20 +22,24 @@ class Books
 		}
 	}
 
-	public function get_books() {
+	public function bookdata() {
 
 		$query = $this->db->prepare("SELECT * FROM `books`");
 		try{
 			$query->execute();
+			return $query->fetch();
 		} catch(PDOException $e){
 			die($e->getMessage());
 		}
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
 		# We use fetchAll() instead of fetch() to get an array of all the selected records.
 >>>>>>> origin/master
 		return $query->fetchAll();
+=======
+>>>>>>> parent of 0d9a447... retrieve book data and display it correctly.
 	}
 }
 ?>
