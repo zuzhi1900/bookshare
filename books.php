@@ -3,6 +3,33 @@
 require 'core/init.php';
 $general->logged_out_protect();
 
+# If form is submitted
+if(empty($_POST) === false) {
+    if(empty($_POST['bookname']) || empty($_POST['author']) || empty($_POST['isbn'])){
+
+    $errors[] = 'All fields are required.';
+  } else {
+
+    if (isset($_POST['bookname']) && !empty($_POST['bookname'])) {
+      # code...
+    }
+    if (isset($_POST['author']) && !empty($_POST['author'])) {
+      # code...
+    }
+    if (isset($_POST['isbn']) && !empty($_POST['isbn'])) {
+      # code...
+    }
+  }
+  if(empty($errors) === true) {
+    $bookname   = htmlentities($_POST['bookname']);
+    $author   = htmlentities($_POST['author']);
+    $isbn    = htmlentities($_POST['isbn']);
+
+    $books->add_book($bookname, $author, $isbn); // Calling the add_book function, which we will create soon.
+    header('Location: books.php?success');
+    exit();
+  }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,39 +53,22 @@ $general->logged_out_protect();
     <?php include 'includes/navbar.php' ?>
 
     <div class="container">
-
-<?php
-    if (isset($_GET['success']) && empty($_GET['success'])) {
-        echo '<h3>已添加！</h3>';
-    } else{
-      if(empty($_POST) === false) {
-        if(empty($_POST['bookname']) || empty($_POST['author']) || empty($_POST['isbn'])){
-
-          $errors[] = 'All fields are required.';
-        } else {
-
-          if (isset($_POST['bookname']) && !empty($_POST['bookname'])) {
-            # code...
-          }
-          if (isset($_POST['author']) && !empty($_POST['author'])) {
-            # code...
-          }
-          if (isset($_POST['isbn']) && !empty($_POST['isbn'])) {
-            # code...
-          }
-        }
-        if(empty($errors) === true) {
-          $bookname   = htmlentities($_POST['bookname']);
-          $author   = htmlentities($_POST['author']);
-          $isbn    = htmlentities($_POST['isbn']);
-
-          $books->add_book($bookname, $author, $isbn); // Calling the add_book function, which we will create soon.
-          header('Location: books.php?success');
-          exit();
-        }
+      <!-- Show info -->
+      <?php
+      if (isset($_GET['success']) && empty($_GET['success'])) {
+      ?>
+      <div class="alert alert-info fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <p>
+      <?php
+          echo "已添加！";
+      ?>
+        </p>
+      </div>
+      <?php
       }
-    }
-?>
+      ?>
+
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
@@ -91,37 +101,19 @@ $general->logged_out_protect();
         </div>
       </div>
       <h2>你的图书</h2>
-      
-      <?php
-      $booksdata = $books->get_books();
-      foreach ($booksdata as $bookdata) {?>
       <div class="row">
-<<<<<<< HEAD
         <div class="col-md-4">
-          <h2>你的图书</h2>
-          <p>书名：</p>
-          <p>作者：</p>
-          <p>isbn：</p>
-          <?php
-          $bookdata = $books->bookdata();
-          foreach ($bookdata as $key => $value) {
-            echo $key."->".$value."<br>";
-          };
-          ?>
-=======
-        <div class="col-md-offset-4 col-md-4">
-      <?php
-          echo '<p>书名：'.$bookdata['bookname']."</p>";
-          echo '<p>作者：'.$bookdata['author']."</p>";
-          echo '<p>isbn：'.$bookdata['isbn']."</p>";
-      ?>
->>>>>>> origin/master
+        <?php
+          $booksdata = $books->get_books();
+          foreach ($booksdata as $bookdata) {
+            echo "id: ".$bookdata['id']."<br>";
+            echo "bookname: ".$bookdata['bookname']."<br>";
+            echo "auhtor: ".$bookdata['author']."<br>";
+            echo "isbn: ".$bookdata['isbn']."<br>";
+          }
+        ?>
         </div>
       </div>
-      <?php
-      };
-      ?>
-      
 
       <!-- footer -->
       <?php include 'includes/footer.php' ?>
