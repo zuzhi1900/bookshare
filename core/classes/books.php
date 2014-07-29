@@ -31,6 +31,10 @@ class Books
 			die($e->getMessage());
 		}
 
+<<<<<<< HEAD
+=======
+		# We use fetchAll() instead of fetch() to get an array of all the selected records.
+>>>>>>> origin/master
 		return $query->fetchAll();
 	}
 }

@@ -99,7 +99,13 @@ if(empty($_POST) === false) {
           </form>
         </div>
       </div>
+      <h2>你的图书</h2>
+      
+      <?php
+      $booksdata = $books->get_books();
+      foreach ($booksdata as $bookdata) {?>
       <div class="row">
+<<<<<<< HEAD
         <div class="col-md-4">
           <h2>你的图书</h2>
           <p>书名：</p>
@@ -114,8 +120,20 @@ if(empty($_POST) === false) {
             echo "isbn: ".$bookdata['isbn']."<br>";
           };
           ?>
+=======
+        <div class="col-md-offset-4 col-md-4">
+      <?php
+          echo '<p>书名：'.$bookdata['bookname']."</p>";
+          echo '<p>作者：'.$bookdata['author']."</p>";
+          echo '<p>isbn：'.$bookdata['isbn']."</p>";
+      ?>
+>>>>>>> origin/master
         </div>
       </div>
+      <?php
+      };
+      ?>
+      
 
       <!-- footer -->
       <?php include 'includes/footer.php' ?>
