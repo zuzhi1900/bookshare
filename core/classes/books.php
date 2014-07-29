@@ -22,15 +22,16 @@ class Books
 		}
 	}
 
-	public function bookdata() {
+	public function get_books() {
 
 		$query = $this->db->prepare("SELECT * FROM `books`");
 		try{
 			$query->execute();
-			return $query->fetch();
 		} catch(PDOException $e){
 			die($e->getMessage());
 		}
+
+		return $query->fetchAll();
 	}
 }
 ?>
